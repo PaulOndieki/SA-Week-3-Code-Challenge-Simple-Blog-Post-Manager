@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog Posts</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Simple styles for layout */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      max-width: 800px;
+    }
+    #post-list div {
+      padding: 8px;
+      border-bottom: 1px solid #ccc;
+      cursor: pointer;
+    }
+    #post-list div:hover {
+      background-color: #f0f0f0;
+    }
+    #post-detail img {
+      margin-top: 10px;
+    }
+    form {
+      margin-top: 20px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    input, textarea, button {
+      width: 100%;
+      padding: 8px;
+      margin: 6px 0;
+      box-sizing: border-box;
+    }
+    .hidden {
+      display: none;
+    }
+    button {
+      cursor: pointer;
+    }
+    button + button {
+      margin-left: 10px;
+      width: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>My Blog</h1>
+
+  <div>
+    <h3>Posts</h3>
+    <div id="post-list">
+      <!-- Post titles will load here -->
+    </div>
+  </div>
+
+  <div>
+    <h3>Post Detail</h3>
+    <div id="post-detail">
+      <p>Select a post to view its details.</p>
+    </div>
+  </div>
+
+  <div>
+    <h3>Add New Post</h3>
+    <form id="new-post-form">
+      <label for="new-title">Title:</label>
+      <input type="text" id="new-title" name="title" required />
+
+      <label for="new-author">Author:</label>
+      <input type="text" id="new-author" name="author" required />
+
+      <label for="new-content">Content:</label>
+      <textarea id="new-content" name="content" rows="4" required></textarea>
+
+      <button type="submit">Add Post</button>
+    </form>
+  </div>
+
+  <!-- Edit form is hidden by default -->
+  <form id="edit-post-form" class="hidden">
+    <h4>Update Post Details</h4>
+
+    <label for="edit-title">Title:</label>
+    <input type="text" id="edit-title" name="title" required />
+
+    <label for="edit-content">Content:</label>
+    <textarea id="edit-content" name="content" rows="4" required></textarea>
+
+    <button type="submit">Update Post</button>
+    <button type="button" id="cancel-edit">Cancel</button>
+  </form>
+
+  <script src="src/index.js"></script>
+</body>
+</html>
+
